@@ -1,5 +1,6 @@
 const apiUrl = 'https://648d-41-104-95-134.ngrok-free.app/api/status';
 
+
 async function fetchStatus() {
     try {
         const response = await fetch(apiUrl);
