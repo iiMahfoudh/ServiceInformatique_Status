@@ -19,32 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             storeStatusElement.textContent = 'Error loading status';
         }
     }
-
-    function updateStatus(status) {
-        storeStatusElement.textContent = status;
-        storeStatusElement.style.color = status === 'Open' ? 'green' : 'red';
-        toggleButton.textContent = `Set to ${status === 'Open' ? 'Closed' : 'Open'}`;
-    }
-
-    async function toggleStatus() {
-        const newStatus = storeStatusElement.textContent === 'Open' ? 'Closed' : 'Open';
-        try {
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'x-api-key': API_KEY,  // Authenticate using the API key
-                },
-                body: JSON.stringify({ status: newStatus })
-            });
-            const data = await response.json();
-            updateStatus(data.status);
-        } catch (error) {
-            console.error('Error updating status:', error);
-        }
-    }
-
-    toggleButton.addEventListener('click', toggleStatus);
+    
     fetchStatus();
     setInterval(fetchStatus, 1000);
 });
