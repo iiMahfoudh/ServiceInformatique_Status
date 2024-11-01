@@ -1,4 +1,4 @@
-const apiUrl = 'https://26df-41-104-95-134.ngrok-free.app';
+const apiUrl = 'https://7de6-41-104-95-134.ngrok-free.app';
 
 async function fetchStatus() {
     try {
