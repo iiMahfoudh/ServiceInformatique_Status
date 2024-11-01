@@ -1,4 +1,4 @@
-const apiUrl = 'https://7de6-41-104-95-134.ngrok-free.app';
+const apiUrl = 'https://648d-41-104-95-134.ngrok-free.app/api/status';
 
 async function fetchStatus() {
     try {
@@ -12,4 +12,5 @@ async function fetchStatus() {
     }
 }
 
-setInterval(fetchStatus, 1000);
+setInterval(fetchStatus, 5000);  // Refresh status every 5 seconds
+
